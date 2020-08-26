@@ -18,5 +18,12 @@
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0",
         "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "@inertiajs/inertia": "^0.2.1",
+        "@inertiajs/inertia-vue": "^0.2.0",
+        "portal-vue": "^2.1.7",
+        "tailwindcss": "^1.7.5",
+        "vue": "^2.6.12"
     }
 }
