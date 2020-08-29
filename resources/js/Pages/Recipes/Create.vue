@@ -25,7 +25,7 @@
                         <div class="space-y-2">
                             <div class="text-sm leading-5 font-medium text-gray-700">Suggested Tags</div>
                             <div class="flex flex-wrap">
-                                <span v-for="(tag, i) in ['Quick & Easy', 'Sweets', 'Beverage']" :key="`tags-${tag}`" class="mr-1">
+                                <span v-for="(tag, i) in ['Quick & Easy', 'Sweets', 'Beverage', 'Filipino', 'Spicy', 'Yogurt', 'Healthy', 'Budget Friendly', 'Original']" :key="`tags-${tag}`" class="inline-flex space-x-1 mr-2">
                                     <span class="text-sm leading-5 text-indigo-600">{{ tag }}</span>
                                     <span class="text-sm leading-5 text-gray-500" v-if="i < 2">,</span>
                                 </span>
