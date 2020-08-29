@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"11f6535f91e479ed066d","1":"d96f863a7c379f80ad3d","2":"a6439dc5789f62ce9ac0","3":"74714a13e4a80fb5d16b","4":"199390c1986157e858bd"}[chunkId] + ""
+/******/ 		return __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js?id=" + {"0":"ce41824cff7b6a8ea034","1":"3684c17b320f3f4f1bd4","2":"b62ab3905d0479843c85","3":"930b73dfe54668e9bc9c","4":"2f9cbec7259f425a2e3d","5":"e585e82f0af8d380d1db"}[chunkId] + ""
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -15662,42 +15662,50 @@ var map = {
 	"./Calendar": [
 		"./resources/js/Pages/Calendar.vue",
 		0,
-		1
+		2
 	],
 	"./Calendar.vue": [
 		"./resources/js/Pages/Calendar.vue",
 		0,
-		1
+		2
 	],
 	"./Explore": [
 		"./resources/js/Pages/Explore.vue",
 		0,
-		2
+		3
 	],
 	"./Explore.vue": [
 		"./resources/js/Pages/Explore.vue",
 		0,
-		2
+		3
 	],
 	"./Home": [
 		"./resources/js/Pages/Home.vue",
 		0,
-		3
+		4
 	],
 	"./Home.vue": [
 		"./resources/js/Pages/Home.vue",
 		0,
-		3
+		4
 	],
 	"./Notifications": [
 		"./resources/js/Pages/Notifications.vue",
 		0,
-		4
+		5
 	],
 	"./Notifications.vue": [
 		"./resources/js/Pages/Notifications.vue",
 		0,
-		4
+		5
+	],
+	"./Recipes/Create": [
+		"./resources/js/Pages/Recipes/Create.vue",
+		1
+	],
+	"./Recipes/Create.vue": [
+		"./resources/js/Pages/Recipes/Create.vue",
+		1
 	]
 };
 function webpackAsyncContext(req) {

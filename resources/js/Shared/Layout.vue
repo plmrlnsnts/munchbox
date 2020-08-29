@@ -1,21 +1,21 @@
 <template>
-    <div class="text-gray-900 antialiased min-h-screen flex flex-col">
+    <div class="text-gray-900 antialiased h-screen flex flex-col">
         <TheHeader />
         <main class="flex-1">
             <slot />
         </main>
-        <TheFooter :key="url()" />
+        <TheNavigation :key="url()" />
     </div>
 </template>
 
 <script>
 import TheHeader from '@/Shared/TheHeader'
-import TheFooter from '@/Shared/TheFooter'
+import TheNavigation from '@/Shared/TheNavigation'
 
 export default {
     components: {
         TheHeader,
-        TheFooter
+        TheNavigation
     },
 
     methods: {
