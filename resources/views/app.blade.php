@@ -6,7 +6,7 @@
     <meta name="description" content="The way to build modern laravel applications.">
     <meta property="og:image" content="{{ asset('banner.jpg') }}">
     <meta property="og:title" content="Oh baby, you're gonna love this!" />
-    <meta property="og:description" content="The way to build modern laravel applications." />
+    <meta property="og:description" content="The way to build modern laravel applications using the best tools out there." />
     <title>Munchbox</title>
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ mix('css/main.css') }}">
