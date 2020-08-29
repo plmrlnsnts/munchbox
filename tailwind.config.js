@@ -1,5 +1,9 @@
 module.exports = {
-  purge: [],
+  purge: [
+    './resources/views/**/*.blade.php',
+    './resources/js/**/*.vue',
+    './resources/js/**/*.js',
+  ],
   theme: {
     extend: {
       borderRadius: {
