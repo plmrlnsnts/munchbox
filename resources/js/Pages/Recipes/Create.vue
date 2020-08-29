@@ -20,16 +20,11 @@
                         </div>
                         <div class="space-y-1">
                             <label class="sm:text-sm sm:leading-5 font-medium text-gray-700">Tags</label>
-                            <input type="text" placeholder="Maximum of 5 tags" class="px-3 py-2 sm:text-sm sm:leading-5 rounded-lg block w-full bg-gray-200 border border-gray-200 focus:bg-white focus:border-indigo-300 focus:outline-none focus:shadow-outline-indigo transition-shadow duration-100 ease-linear" />
+                            <TagsInput v-model="form.tags" />
                         </div>
                         <div class="space-y-2">
                             <div class="text-sm leading-5 font-medium text-gray-700">Suggested Tags</div>
-                            <div class="flex flex-wrap">
-                                <span v-for="(tag, i) in ['Quick & Easy', 'Sweets', 'Beverage', 'Filipino', 'Spicy', 'Chicken', 'Yogurt', 'Healthy', 'Budget Friendly', 'Original']" :key="`tags-${tag}`" class="inline-flex space-x-1 mr-2">
-                                    <span class="text-sm leading-5 text-indigo-600">{{ tag }}</span>
-                                    <span class="text-sm leading-5 text-gray-500" v-if="i < 9">,</span>
-                                </span>
-                            </div>
+                            <SuggestedTags @selected="form.tags.push($event)" />
                         </div>
                         <div class="space-y-1">
                             <label class="sm:text-sm sm:leading-5 font-medium text-gray-700">Description</label>
@@ -61,12 +56,16 @@
 </template>
 
 <script>
+import TagsInput from '@/Shared/TagsInput'
 import FileUpload from '@/Shared/FileUpload'
+import SuggestedTags from '@/Shared/SuggestedTags'
 import IngredientList from '@/Shared/IngredientList'
 
 export default {
     components: {
+        TagsInput,
         FileUpload,
+        SuggestedTags,
         IngredientList,
     },
 

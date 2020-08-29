@@ -17,10 +17,16 @@ module.exports = {
       },
       inset: {
         4: '16px',
+      },
+      minWidth: {
+        '1/4': '25%',
       }
     },
   },
   variants: {
+    backgroundColor: ['responsive', 'hover', 'focus', 'focus-within'],
+    borderColor: ['responsive', 'hover', 'focus', 'focus-within'],
+    boxShadow: ['responsive', 'hover', 'focus', 'focus-within'],
     opacity: ['responsive', 'hover', 'focus', 'group-hover'],
     pointerEvents: ['responsive', 'group-hover'],
   },
