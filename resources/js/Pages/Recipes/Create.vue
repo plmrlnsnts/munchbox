@@ -10,7 +10,7 @@
         </div>
         <div class="flex-1 overflow-y-auto">
             <div class="p-4 space-y-4 mb-10">
-                <h2 class="font-medium text-center">Post a recipe</h2>
+                <h2 class="font-medium text-center">Publish your recipe</h2>
                 <form>
                     <div class="space-y-6">
                         <FileUpload v-model="form.thumb" />
