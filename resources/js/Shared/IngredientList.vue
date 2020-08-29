@@ -2,8 +2,8 @@
     <div class="space-y-4">
         <div class="flex justify-between">
             <div class="flex space-x-2">
-                <label class="text-sm leading-5 font-medium text-gray-700">Ingredients</label>
-                <button @click="remove" v-if="selectedIngredients.length" type="button" class="text-red-500 text-sm leading-5 focus:outline-none">
+                <label class="sm:text-sm sm:leading-5 font-medium text-gray-700">Ingredients</label>
+                <button @click="remove" v-if="selectedIngredients.length" type="button" class="text-red-500 sm:text-sm sm:leading-5 focus:outline-none">
                     Remove
                 </button>
             </div>
@@ -14,13 +14,13 @@
             </button>
         </div>
         <ul class="space-y-2">
-            <li v-if="! ingredients.length" class="text-sm leading-5 text-gray-700">
+            <li v-if="! ingredients.length" class="sm:text-sm sm:leading-5 text-gray-700">
                 There are no ingredients yet.
             </li>
             <li v-for="(ingredient, i) in ingredients" :key="`ingredients-${i}`">
                 <label class="inline-flex items-center space-x-2">
                     <input v-model="selectedIngredients" :value="i" type="checkbox" class="form-checkbox text-indigo-500">
-                    <div class="text-sm leading-5" :class="isSelected(i) ? 'text-indigo-700' : 'text-gray-700'">
+                    <div class="sm:text-sm sm:leading-5" :class="isSelected(i) ? 'text-indigo-700' : 'text-gray-700'">
                         {{ `${ingredient.quantity} ${ingredient.unit} of ${ingredient.name}` }}
                     </div>
                 </label>
