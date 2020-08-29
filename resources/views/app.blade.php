@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The way to build modern laravel applications.">
-    <meta property="og:image" content="{{ mix('banner.jpg') }}">
+    <meta property="og:image" content="{{ asset('banner.jpg') }}">
     <meta property="og:title" content="Oh baby, you're gonna love this!" />
     <meta property="og:description" content="The way to build modern laravel applications." />
     <title>Munchbox</title>
