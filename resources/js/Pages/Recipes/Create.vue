@@ -21,9 +21,11 @@
                         <div class="space-y-1">
                             <label class="sm:text-sm sm:leading-5 font-medium text-gray-700">Tags</label>
                             <input type="text" placeholder="Maximum of 5 tags" class="px-3 py-2 sm:text-sm sm:leading-5 rounded-lg block w-full bg-gray-200 border border-gray-200 focus:bg-white focus:border-blue-400 focus:outline-none focus:shadow-outline transition-shadow duration-100 ease-linear" />
-                            <div class="flex flex-wrap text-xs leading-5">
-                                <div class="font-medium text-pink-500 mr-2">Suggestions:</div>
-                                <span v-for="(tag, i) in ['Easy Recipe', 'Sweets', 'Beverage']" :key="`tags-${tag}`" class="text-gray-700 mr-1">
+                        </div>
+                        <div class="space-y-2">
+                            <div class="text-sm leading-5 font-medium text-gray-700">Suggested Tags</div>
+                            <div class="flex flex-wrap">
+                                <span v-for="(tag, i) in ['Quick & Easy', 'Sweets', 'Beverage']" :key="`tags-${tag}`" class="text-sm leading-5 text-pink-500 mr-1">
                                     {{ tag + (i >= 2 ? '' : ',') }}
                                 </span>
                             </div>
