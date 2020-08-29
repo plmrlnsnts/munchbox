@@ -9,6 +9,9 @@ module.exports = {
       borderRadius: {
         xl: '1rem',
       },
+      boxShadow: {
+        'outline-indigo': '0 0 0 3px rgba(180, 198, 252, .45)',
+      },
       fontFamily: {
         display: 'Chewy, cursive',
       },

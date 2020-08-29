@@ -12,14 +12,14 @@
                 <label class="sm:text-sm sm:leading-5 font-medium text-gray-700">Measurements</label>
                 <div class="flex space-x-2">
                     <input v-model="form.quantity" type="text" placeholder="Qty" class="px-3 py-2 sm:text-sm sm:leading-5 block w-20 rounded-lg border border-gray-200 bg-gray-200 focus:bg-white
-                    focus:outline-none focus:shadow-outline focus:border-blue-400 transition-shadow duration-100 ease-linear">
-                    <input v-model="form.unit" type="text" placeholder="Unit" class="px-3 py-2 sm:text-sm sm:leading-5 block w-full rounded-lg border border-gray-200 bg-gray-200 focus:bg-white focus:outline-none focus:shadow-outline focus:border-blue-400 transition-shadow duration-100 ease-linear">
+                    focus:outline-none focus:shadow-outline-indigo focus:border-indigo-400 transition-shadow duration-100 ease-linear">
+                    <input v-model="form.unit" type="text" placeholder="Unit" class="px-3 py-2 sm:text-sm sm:leading-5 block w-full rounded-lg border border-gray-200 bg-gray-200 focus:bg-white focus:outline-none focus:shadow-outline-indigo focus:border-indigo-400 transition-shadow duration-100 ease-linear">
                 </div>
             </div>
             <div class="space-y-1">
                 <label class="sm:text-sm sm:leading-5 font-medium text-gray-700">Ingredient</label>
                 <input v-model="form.name" type="text" class="px-3 py-2 sm:text-sm sm:leading-5 block w-full rounded-lg border border-gray-200 bg-gray-200 focus:bg-white
-                    focus:outline-none focus:shadow-outline focus:border-blue-400 transition-shadow duration-100 ease-linear">
+                    focus:outline-none focus:shadow-outline-indigo focus:border-indigo-400 transition-shadow duration-100 ease-linear">
             </div>
             <button type="submit" class="rounded-full px-4 py-3 sm:text-sm sm:leading-5 font-medium block w-full bg-pink-500 text-white focus:outline-none" :class="{ 'opacity-50 cursor-not-allowed': ! isValid }" :disabled="! isValid">Add ingredient</button>
         </form>
