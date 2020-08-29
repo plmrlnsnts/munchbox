@@ -25,15 +25,15 @@
                         <div class="space-y-2">
                             <div class="text-sm leading-5 font-medium text-gray-700">Suggested Tags</div>
                             <div class="flex flex-wrap">
-                                <span v-for="(tag, i) in ['Quick & Easy', 'Sweets', 'Beverage', 'Filipino', 'Spicy', 'Yogurt', 'Healthy', 'Budget Friendly', 'Original']" :key="`tags-${tag}`" class="inline-flex space-x-1 mr-2">
+                                <span v-for="(tag, i) in ['Quick & Easy', 'Sweets', 'Beverage', 'Filipino', 'Spicy', 'Chicken', 'Yogurt', 'Healthy', 'Budget Friendly', 'Original']" :key="`tags-${tag}`" class="inline-flex space-x-1 mr-2">
                                     <span class="text-sm leading-5 text-indigo-600">{{ tag }}</span>
-                                    <span class="text-sm leading-5 text-gray-500" v-if="i < 2">,</span>
+                                    <span class="text-sm leading-5 text-gray-500" v-if="i < 8">,</span>
                                 </span>
                             </div>
                         </div>
                         <div class="space-y-1">
                             <label class="sm:text-sm sm:leading-5 font-medium text-gray-700">Description</label>
-                            <textarea placeholder="A quick summary for this recipe" class="px-3 py-2 sm:text-sm sm:leading-5 rounded-lg block w-full bg-gray-200 border border-gray-200 focus:bg-white focus:border-indigo-300 focus:outline-none focus:shadow-outline-indigo transition-shadow duration-100 ease-linear" rows="4"></textarea>
+                            <textarea placeholder="How would you describe your recipe" class="px-3 py-2 sm:text-sm sm:leading-5 rounded-lg block w-full bg-gray-200 border border-gray-200 focus:bg-white focus:border-indigo-300 focus:outline-none focus:shadow-outline-indigo transition-shadow duration-100 ease-linear" rows="4"></textarea>
                         </div>
                         <hr class="-mx-4">
                         <IngredientList v-model="form.ingredients" />
@@ -43,7 +43,7 @@
                             <textarea placeholder="Steps for making this awesome recipe" class="px-3 py-2 sm:text-sm sm:leading-5 rounded-lg block w-full bg-gray-200 border border-gray-200 focus:bg-white focus:border-indigo-300 focus:outline-none focus:shadow-outline-indigo transition-shadow duration-100 ease-linear" rows="8"></textarea>
                         </div>
                         <div class="space-y-1">
-                            <label class="sm:text-sm sm:leading-5 font-medium text-gray-700">Video Demo (optional)</label>
+                            <label class="sm:text-sm sm:leading-5 font-medium text-gray-700">Video (optional)</label>
                             <div class="relative">
                                 <input type="text" placeholder="Youtube embed url" class="pl-10 pr-3 py-2 sm:text-sm sm:leading-5 rounded-lg block w-full bg-gray-200 border border-gray-200 focus:bg-white focus:border-indigo-300 focus:outline-none focus:shadow-outline-indigo transition-shadow duration-100 ease-linear" />
                                 <div class="pointer-events-none flex items-center absolute inset-0 px-3">
