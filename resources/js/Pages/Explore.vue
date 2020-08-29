@@ -3,7 +3,7 @@
         <Portal to="header-center">
             <form>
                 <div class="relative">
-                    <input type="text" placeholder="Search munchbox" class="pl-10 pr-3 py-2 block w-full font-medium sm:text-sm sm:leading-5 rounded-full border border-gray-200 bg-gray-200 focus:border-indigo-300 focus:bg-white focus:outline-none focus:shadow-outline-indigo" />
+                    <input type="text" placeholder="Search munchbox" class="pl-10 pr-3 py-2 block w-full sm:text-sm sm:leading-5 rounded-full border border-gray-200 bg-gray-200 focus:border-indigo-300 focus:bg-white focus:outline-none focus:shadow-outline-indigo" />
                     <div class="pointer-events-none absolute inset-y-0 flex items-center px-3">
                         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-gray-500 w-5 h-5">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
