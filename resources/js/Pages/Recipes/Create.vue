@@ -27,7 +27,7 @@
                             <div class="flex flex-wrap">
                                 <span v-for="(tag, i) in ['Quick & Easy', 'Sweets', 'Beverage', 'Filipino', 'Spicy', 'Chicken', 'Yogurt', 'Healthy', 'Budget Friendly', 'Original']" :key="`tags-${tag}`" class="inline-flex space-x-1 mr-2">
                                     <span class="text-sm leading-5 text-indigo-600">{{ tag }}</span>
-                                    <span class="text-sm leading-5 text-gray-500" v-if="i < 8">,</span>
+                                    <span class="text-sm leading-5 text-gray-500" v-if="i < 9">,</span>
                                 </span>
                             </div>
                         </div>
