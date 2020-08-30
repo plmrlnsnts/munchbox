@@ -12,7 +12,7 @@
             </a>
         </Portal>
         <ul class="mb-10">
-            <li v-for="recipe in recipes.data" :key="`recipes-${recipe.id}`" class="p-4 space-y-4">
+            <li v-for="recipe in recipes.data" :key="`recipes-${recipe.id}`" class="p-4 space-y-6">
                 <div class="relative h-56 rounded-xl overflow-hidden group">
                     <img class="absolute w-full h-full bg-gray-200" :src="recipe.thumbnail" loading="lazy">
                     <div class="invisible group-hover:visible absolute bottom-0 w-full h-24 flex items-end justify-between p-4 ease-out bg-gradient-to-b from-transparent to-black">
