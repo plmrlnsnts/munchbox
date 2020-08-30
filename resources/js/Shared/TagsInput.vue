@@ -1,13 +1,16 @@
 <template>
-    <div class="flex flex-wrap pl-3 pr-2 pt-2 sm:text-sm sm:leading-5 rounded-lg bg-gray-200 border border-gray-200 focus-within:bg-white focus-within:border-indigo-300 focus-within:shadow-outline-indigo">
-        <span class="mr-1 mb-2 px-2 py-px bg-gray-700 text-white rounded" v-for="tag in tags" :key="`tags-${tag}`">{{ tag }}</span>
+    <div class="flex flex-wrap items-center pl-3 pr-2 pt-2 pb-1 rounded-lg border border-gray-200 bg-gray-200 focus-within:bg-white focus-within:border-indigo-300 focus-within:shadow-outline-indigo transition-shadow duration-100 ease-linear">
+        <button v-for="(tag, i) in tags" :key="`tags-${tag}`" @click="select(i)" type="button" class="mr-1 mb-1 px-2 py-px bg-gray-700 text-sm leading-5 text-white rounded-md whitespace-no-wrap flex-shrink-0 focus:outline-none" :class="{ 'bg-pink-600': isSelected(i) }">
+            {{ tag }}
+        </button>
         <input
             ref="input"
             type="text"
-            placeholder="Max of 5"
-            class="mr-3 mb-2 bg-transparent flex-1 min-w-1/4 focus:outline-none"
-            @keypress.enter="add($event.target.value)"
-            @keypress.tab="add($event.target.value)"
+            class="mr-1 mb-1 bg-transparent flex-1 min-w-1/4 focus:outline-none"
+            @input="input"
+            @keydown.tab.prevent="add($event.target.value)"
+            @keydown.enter.prevent="add($event.target.value)"
+            @keydown.delete="remove(selectedTag !== null ? selectedTag : (tags.length - 1))"
         />
     </div>
 </template>
@@ -19,14 +22,38 @@ export default {
     },
 
     data: vm => ({
-        tags: vm.value || []
+        tags: vm.value || [],
+        selectedTag: null,
     }),
 
     methods: {
+        select (index) {
+            this.selectedTag = index
+            this.$refs.input.focus()
+        },
+
+        isSelected (index) {
+            return this.selectedTag === index
+        },
+
+        input (event) {
+            let value = event.target.value
+            if (value.endsWith(',')) {
+                this.add(value.replace(',', ''))
+            }
+        },
+
         add (value) {
+            if (! value) return
             if (this.tags.includes(value)) return
             this.$refs.input.value = ''
             this.tags.push(value)
+        },
+
+        remove (index) {
+            if (this.$refs.input.value) return
+            this.tags.splice(index, 1)
+            this.selectedTag = null
         }
     },
 

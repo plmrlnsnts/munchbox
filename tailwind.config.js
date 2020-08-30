@@ -12,9 +12,6 @@ module.exports = {
       boxShadow: {
         'outline-indigo': '0 0 0 3px rgba(180, 198, 252, .45)',
       },
-      fontFamily: {
-        display: 'Chewy, cursive',
-      },
       inset: {
         4: '16px',
       },
