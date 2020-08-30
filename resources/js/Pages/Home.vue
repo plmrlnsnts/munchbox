@@ -106,9 +106,9 @@ export default {
         scrolled (event) {
             if (this.isLoading) return
 
-            const element = event.srcElement;
+            const element = event.target;
 
-            if((element.offsetHeight + element.scrollTop) >= element.scrollHeight) {
+            if((element.offsetHeight + element.scrollTop) >= (element.scrollHeight - 200)) {
                 this.state = 'loading'
                 this.fetch()
             }
