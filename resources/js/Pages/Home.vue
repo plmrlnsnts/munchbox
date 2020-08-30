@@ -12,9 +12,9 @@
             </a>
         </Portal>
         <ul class="mb-10">
-            <li v-for="recipe in recipes.data" :key="`recipes-${recipe.id}`" class="p-4 space-y-6">
-                <div class="relative h-56 rounded-xl overflow-hidden group">
-                    <img class="absolute w-full h-full bg-gray-200" :src="recipe.thumbnail" loading="lazy">
+            <li v-for="recipe in recipes.data" :key="`recipes-${recipe.id}`" class="px-4 py-6 space-y-4">
+                <div class="relative h-64 rounded-xl overflow-hidden group">
+                    <img class="absolute w-full h-full bg-gray-200 object-cover" :src="recipe.thumbnail" loading="lazy">
                     <div class="invisible group-hover:visible absolute bottom-0 w-full h-24 flex items-end justify-between p-4 ease-out bg-gradient-to-b from-transparent to-black">
                         <a href="" class="mr-8 text-white font-semibold truncate">{{ recipe.name }}</a>
                         <button type="button" class="flex-shrink-0 px-3 py-2 rounded-lg bg-white focus:outline-none">
@@ -27,7 +27,7 @@
                 <div class="flex items-center justify-between">
                     <div class="flex items-center space-x-4">
                         <img class="w-6 h-6 rounded-full shadow-xs object-cover bg-gray-200" :src="recipe.author.avatar" loading="lazy" />
-                        <a href="" class="font-medium">{{ recipe.author.name }}</a>
+                        <a href="" class="font-medium text-sm leading-5">{{ recipe.author.name }}</a>
                     </div>
                     <div class="flex items-center space-x-2">
                         <a href="" class="text-gray-700">
