@@ -108,7 +108,7 @@ export default {
 
             const element = event.target;
 
-            if((element.offsetHeight + element.scrollTop) >= (element.scrollHeight - 200)) {
+            if((element.offsetHeight + element.scrollTop) >= (element.scrollHeight - 100)) {
                 this.state = 'loading'
                 this.fetch()
             }
