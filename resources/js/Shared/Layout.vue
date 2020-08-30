@@ -1,7 +1,7 @@
 <template>
-    <div class="text-gray-900 antialiased flex flex-col">
+    <div class="flex flex-col">
         <TheHeader />
-        <main class="flex-1">
+        <main class="flex-1 overflow-hidden">
             <slot />
         </main>
         <TheNavigation :key="url()" />

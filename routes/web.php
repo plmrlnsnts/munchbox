@@ -14,8 +14,13 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', fn () => Inertia::render('Home'))->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('explore', fn () => Inertia::render('Explore'))->name('explore');
 Route::get('notifications', fn () => Inertia::render('Notifications'))->name('notifications');
 Route::get('calendar', fn () => Inertia::render('Calendar'))->name('calendar');
-Route::get('recipes/create', fn () => Inertia::render('Recipes/Create'))->name('recipes.create');
+
+Route::get('recipes', 'RecipesController@index')->name('recipes.index');
+Route::get('recipes/create', 'RecipesController@create')->name('recipes.create');
+Route::post('recipes', 'RecipesController@store')->name('recipes.store');
+
+Route::post('media', 'MediaController@store')->name('media.store');

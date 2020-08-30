@@ -13,7 +13,9 @@
                 <div class="flex space-x-2">
                     <input v-model="form.quantity" type="text" placeholder="Qty" class="px-3 py-2 block w-20 rounded-lg border border-gray-200 bg-gray-200 focus:bg-white
                     focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300 transition-shadow duration-100 ease-linear">
-                    <input v-model="form.unit" type="text" placeholder="Unit" class="px-3 py-2 block w-full rounded-lg border border-gray-200 bg-gray-200 focus:bg-white focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300 transition-shadow duration-100 ease-linear">
+                    <select v-model="form.unit" class="px-3 py-2 block w-full form-select rounded-lg border-gray-200 bg-gray-200 focus:bg-white focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300 transition-shadow duration-100 ease-linear">
+                        <option v-for="unit in units" :value="unit" :key="`units-${unit}`">{{ unit }}</option>
+                    </select>
                 </div>
             </div>
             <div class="space-y-1">
@@ -38,10 +40,22 @@ export default {
     },
 
     data: vm => ({
+        units: [
+            'Cups',
+            'Grams',
+            'Kilograms',
+            'Liters',
+            'Milliliters',
+            'Pieces',
+            'Pinch',
+            'Pounds',
+            'Tablespoons',
+            'Teaspoons',
+        ],
         form: {
             name: vm.ingredient.name || '',
-            quantity: vm.ingredient.quantity || 1,
-            unit: vm.ingredient.unit || 'pc',
+            quantity: vm.ingredient.quantity || "1",
+            unit: vm.ingredient.unit || 'Pieces',
         }
     }),
 
