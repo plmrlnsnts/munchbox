@@ -23,7 +23,8 @@ class RecipesController extends Controller
         return Recipe::query()
             ->with('author')
             ->latest('updated_at')
-            ->paginate(5);
+            ->paginate(5)
+            ->setPath('/recipes');
     }
 
     public function create()
