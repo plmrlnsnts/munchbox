@@ -44,7 +44,7 @@
                 </div>
             </li>
             <template v-if="isLoading">
-                <li v-for="index in [1, 2]" :key="`loader-${index}`" class="p-4 space-y-4">
+                <li v-for="index in [1, 2]" :key="`loader-${index}`" class="px-4 py-6 space-y-4">
                     <div class="h-56 rounded-xl bg-gray-200"></div>
                     <div class="flex items-center justify-between">
                         <div class="flex items-center space-x-4">

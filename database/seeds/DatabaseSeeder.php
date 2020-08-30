@@ -22,18 +22,22 @@ class DatabaseSeeder extends Seeder
             collect($recipes)
                 ->map(fn ($recipe) => $recipe['author'])
                 ->unique(fn ($user) => $user['id'])
-                ->map(fn ($user) => array_merge($user, [
+                ->map(fn ($user) => [
+                    'name' => $user['name'],
+                    'email' => $user['email'],
                     'password' => bcrypt('password'),
                     'created_at' => now(),
                     'updated_at' => now(),
-                ]))
+                ])
                 ->sortBy('id')
                 ->all()
         );
 
         collect($recipes)->each(function ($data) {
-            $recipe = Recipe::create(Arr::except($data, ['author', 'ingredients']));
-            $recipe->ingredients()->createMany($data['ingredients']);
+            $recipe = Recipe::create(Arr::except($data, ['id', 'author', 'ingredients']));
+            collect($data['ingredients'])->each(fn ($ingr) => (
+                $recipe->ingredients()->create(Arr::except($ingr, ['id'])
+            )));
         });
     }
 }
