@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full overflow-y-auto" @scroll="scroll">
+    <div class="h-full overflow-y-auto" @scroll.passive="scrolled">
         <Portal to="header-center">
             <img class="h-5 w-full" src="/logo.svg" alt="Munchbox">
         </Portal>
@@ -103,7 +103,7 @@ export default {
             })
         },
 
-        scroll (event) {
+        scrolled (event) {
             if (this.isLoading) return
 
             const element = event.srcElement;
