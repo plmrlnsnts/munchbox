@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="$refs.file.click()" type="button" class="relative border-2 border-dashed border-gray-400 bg-white rounded-xl overflow-hidden h-56 w-full block focus:outline-none" :disabled="isLoading">
+        <button @click="$refs.file.click()" type="button" class="relative pb-2/3 border-2 border-dashed border-gray-400 bg-white rounded-xl overflow-hidden w-full block focus:outline-none" :disabled="isLoading">
             <div v-if="preview" class="absolute inset-0 flex items-center justify-center">
                 <img class="w-full h-full object-cover" :class="{ 'opacity-25': isLoading }" :src="preview" alt="File preview">
                 <svg v-if="isLoading" class="w-10 h-10 text-black absolute animate-spin" viewBox="0 0 24 24">

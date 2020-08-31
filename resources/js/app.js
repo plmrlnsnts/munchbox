@@ -7,6 +7,12 @@ Vue.use(PortalVue)
 
 Vue.mixin({ methods: { $route: window.route } })
 
+Vue.filter('truncate', function (value, length) {
+    return value.length > length
+        ? value.slice(0, length) + '...'
+        : value;
+});
+
 const app = document.getElementById('app')
 
 new Vue({

@@ -22,7 +22,10 @@ module.exports = {
       },
       minWidth: {
         '1/4': '25%',
-      }
+      },
+      padding: {
+        '2/3': '66.6667%',
+      },
     },
   },
   variants: {
