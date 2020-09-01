@@ -19,11 +19,11 @@
             <li v-for="recipe in recipes" :key="`recipes-${recipe.id}`" class="px-4 py-6 space-y-4">
                 <div class="flex items-center space-x-4">
                     <img class="w-8 h-8 rounded-full shadow-xs object-cover bg-gray-200" :src="recipe.author.avatar" loading="lazy" />
-                    <div class="leading-none overflow-hidden">
-                        <InertiaLink :href="$route('recipes.show', recipe.id)" class="block font-semibold text-sm leading-5 truncate">{{ recipe.name }}</InertiaLink>
+                    <div class="text-sm leading-5 overflow-hidden">
+                        <InertiaLink :href="$route('recipes.show', recipe.id)" class="block font-semibold truncate">{{ recipe.name }}</InertiaLink>
                         <div>
-                            <span class="text-sm text-gray-700">by</span>
-                            <a href="" class="font-medium text-sm text-indigo-600">{{ recipe.author.name }}</a>
+                            <span class="text-gray-700">by</span>
+                            <a href="" class="font-medium text-indigo-600">{{ recipe.author.name }}</a>
                         </div>
                     </div>
                 </div>
@@ -55,12 +55,10 @@
                         </div>
                     </div>
                 </div>
-                <ul>
-                    <li class="text-sm leading-tight">
-                        <span class="font-medium">{{ recipe.author.name }}</span>
-                        <span class="text-gray-700">{{ recipe.description | truncate(100) }}</span>
-                    </li>
-                </ul>
+                <p class="text-sm leading-tight">
+                    <span class="font-medium">{{ recipe.author.name }}</span>
+                    <span class="text-gray-700">{{ recipe.description | truncate(100) }}</span>
+                </p>
             </li>
             <template v-if="isLoading">
                 <li v-for="index in [1, 2]" :key="`loader-${index}`" class="px-4 py-6 space-y-4">

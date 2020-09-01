@@ -10,10 +10,10 @@
         <Portal to="header-center">
             <div class="font-bold text-lg ml-2">Recipe</div>
         </Portal>
-        <div class="p-4 space-y-4 mb-10">
+        <div class="p-4 space-y-6 mb-10">
             <div class="flex items-center space-x-4">
                 <img class="w-8 h-8 rounded-full shadow-xs object-cover bg-gray-200" :src="recipe.author.avatar" loading="lazy" />
-                <div class="leading-tight overflow-hidden">
+                <div class="text-sm leading-5 overflow-hidden">
                     <h2 class="block font-semibold">{{ recipe.name }}</h2>
                     <div>
                         <span class="text-gray-700">by</span>
@@ -47,9 +47,10 @@
                     </div>
                 </div>
             </div>
-            <div class="leading-tight">
-                {{ recipe.description }}
-            </div>
+            <p class="text-sm leading-tight">
+                <span class="font-medium">{{ recipe.author.name }}</span>
+                <span class="text-gray-700">{{ recipe.description }}</span>
+            </p>
             <hr />
             <h6 class="font-semibold">Ingredients</h6>
             <ul class="space-y-4">
@@ -57,7 +58,7 @@
                     <svg viewBox="0 0 20 20" fill="currentColor" class="text-indigo-500 w-5 h-5">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
                     </svg>
-                    <div class="flex-1">
+                    <div class="flex-1 text-sm leading-5">
                         <span v-if="ingredient.quantity">{{ ingredient.quantity }}</span>
                         <span v-if="ingredient.unit">{{ ingredient.unit }}</span>
                         <span v-if="ingredient.name">{{ ingredient.name }}</span>
@@ -66,7 +67,7 @@
             </ul>
             <hr />
             <h6 class="font-semibold">Instructions</h6>
-            <div class="leading-tight space-y-4" v-html="recipe.instructions"></div>
+            <div class="text-sm text-gray-700 leading-tight space-y-4" v-html="recipe.instructions"></div>
         </div>
     </div>
 </template>

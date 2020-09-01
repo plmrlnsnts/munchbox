@@ -83,6 +83,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   layout: _Shared_Layout__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -154,7 +155,7 @@ var render = function() {
         _c("div", { staticClass: "font-bold text-lg ml-2" }, [_vm._v("Recipe")])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "p-4 space-y-4 mb-10" }, [
+      _c("div", { staticClass: "p-4 space-y-6 mb-10" }, [
         _c("div", { staticClass: "flex items-center space-x-4" }, [
           _c("img", {
             staticClass:
@@ -162,7 +163,7 @@ var render = function() {
             attrs: { src: _vm.recipe.author.avatar, loading: "lazy" }
           }),
           _vm._v(" "),
-          _c("div", { staticClass: "leading-tight overflow-hidden" }, [
+          _c("div", { staticClass: "text-sm leading-5 overflow-hidden" }, [
             _c("h2", { staticClass: "block font-semibold" }, [
               _vm._v(_vm._s(_vm.recipe.name))
             ]),
@@ -283,10 +284,14 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "leading-tight" }, [
-          _vm._v(
-            "\n            " + _vm._s(_vm.recipe.description) + "\n        "
-          )
+        _c("p", { staticClass: "text-sm leading-tight" }, [
+          _c("span", { staticClass: "font-medium" }, [
+            _vm._v(_vm._s(_vm.recipe.author.name))
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "text-gray-700" }, [
+            _vm._v(_vm._s(_vm.recipe.description))
+          ])
         ]),
         _vm._v(" "),
         _c("hr"),
@@ -322,7 +327,7 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "flex-1" }, [
+                _c("div", { staticClass: "flex-1 text-sm leading-5" }, [
                   ingredient.quantity
                     ? _c("span", [_vm._v(_vm._s(ingredient.quantity))])
                     : _vm._e(),
@@ -346,7 +351,7 @@ var render = function() {
         _c("h6", { staticClass: "font-semibold" }, [_vm._v("Instructions")]),
         _vm._v(" "),
         _c("div", {
-          staticClass: "leading-tight space-y-4",
+          staticClass: "text-sm text-gray-700 leading-tight space-y-4",
           domProps: { innerHTML: _vm._s(_vm.recipe.instructions) }
         })
       ])
