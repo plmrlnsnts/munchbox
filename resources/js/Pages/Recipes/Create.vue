@@ -68,10 +68,6 @@ export default {
         IngredientList,
     },
 
-    mounted () {
-        this.$el.style.height = `${window.innerHeight}px`
-    },
-
     data: vm => ({
         state: 'idle',
         form: {

@@ -1,25 +1,21 @@
 <template>
-    <div class="flex flex-col">
+    <div class="h-full flex flex-col">
         <TheHeader />
-        <main class="flex-1 overflow-hidden">
+        <main class="flex-1 overflow-hidden mb-16">
             <slot />
         </main>
-        <TheNavigation :key="url()" />
+        <TheFooter :key="url()" />
     </div>
 </template>
 
 <script>
 import TheHeader from '@/Shared/TheHeader'
-import TheNavigation from '@/Shared/TheNavigation'
+import TheFooter from '@/Shared/TheFooter'
 
 export default {
     components: {
         TheHeader,
-        TheNavigation
-    },
-
-    mounted () {
-        this.$el.style.height = `${window.innerHeight}px`
+        TheFooter
     },
 
     methods: {

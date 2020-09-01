@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="h-full" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
     @routes
 </head>
-<body class="text-gray-900 antialiased font-sans">
+<body class="h-full text-gray-900 antialiased font-sans">
     @inertia
 </body>
 </html>
