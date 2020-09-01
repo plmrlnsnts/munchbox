@@ -1,6 +1,13 @@
 <template>
     <div class="flex flex-wrap items-center pl-3 pr-2 pt-2 pb-1 rounded-lg border border-gray-200 bg-gray-200 focus-within:bg-white focus-within:border-indigo-300 focus-within:shadow-outline-indigo transition-shadow duration-100 ease-linear">
-        <button v-for="(tag, i) in tags" :key="`tags-${tag}`" @click="select(i)" type="button" class="mr-1 mb-1 px-2 py-px bg-gray-700 text-sm leading-5 text-white rounded-md whitespace-no-wrap flex-shrink-0 focus:outline-none" :class="{ 'bg-pink-600': isSelected(i) }">
+        <button
+            class="mr-1 mb-1 px-2 py-px bg-gray-700 text-sm leading-5 text-white rounded-md whitespace-no-wrap flex-shrink-0 focus:outline-none"
+            :class="{ 'bg-pink-500': isSelected(i) }"
+            v-for="(tag, i) in tags"
+            :key="`tags-${tag}`"
+            @click="select(i)"
+            type="button"
+        >
             {{ tag }}
         </button>
         <input

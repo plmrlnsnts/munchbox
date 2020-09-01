@@ -20,4 +20,9 @@ class Recipe extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function getInstructionsAttribute()
+    {
+        return '<p>' . str_replace('<br>', '</p><p>', $this->attributes['instructions']) . '</p>';
+    }
 }

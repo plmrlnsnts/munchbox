@@ -61,4 +61,11 @@ class RecipesController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function show(Recipe $recipe)
+    {
+        $recipe->load(['author', 'ingredients', 'tags']);
+
+        return Inertia::render('Recipes/Show', compact('recipe'));
+    }
 }

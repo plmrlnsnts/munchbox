@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col">
+    <div class="h-full flex flex-col">
         <div class="h-16 bg-indigo-600 flex justify-between">
             <InertiaLink :href="$route('home')" class="inline-flex items-center px-4 text-white font-semibold">
                 Cancel

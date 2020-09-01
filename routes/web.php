@@ -21,6 +21,7 @@ Route::get('calendar', fn () => Inertia::render('Calendar'))->name('calendar');
 
 Route::get('recipes', 'RecipesController@index')->name('recipes.index');
 Route::get('recipes/create', 'RecipesController@create')->name('recipes.create');
+Route::get('recipes/{recipe}', 'RecipesController@show')->name('recipes.show');
 Route::post('recipes', 'RecipesController@store')->name('recipes.store');
 
 Route::post('media', 'MediaController@store')->name('media.store');
