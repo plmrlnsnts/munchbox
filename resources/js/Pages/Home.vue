@@ -84,6 +84,7 @@
 
 <script>
 import axios from 'axios'
+import { debounce } from 'lodash'
 import Layout from '@/Shared/Layout'
 
 export default {
@@ -96,7 +97,13 @@ export default {
     }),
 
     mounted () {
-        this.fetch()
+        this.$nextTick(() => {
+            if (! this.recipes.length) {
+                this.fetch()
+            } else {
+                this.$el.scrollTop = localStorage.getItem('Home.ScrollPosition')
+            }
+        })
     },
 
     computed: {
@@ -104,6 +111,11 @@ export default {
             return this.state === 'loading'
         }
     },
+
+    remember: [
+        'recipes',
+        'nextPageUrl',
+    ],
 
     methods: {
         fetch () {
@@ -120,15 +132,17 @@ export default {
             })
         },
 
-        scrolled (event) {
+        scrolled: debounce(function (event) {
             const element = event.target
             const scrollPosition = element.offsetHeight + element.scrollTop
             const scrollHorizon = element.scrollHeight - element.scrollHeight / 4
 
+            localStorage.setItem('Home.ScrollPosition', element.scrollTop)
+
             if (scrollPosition >= scrollHorizon) {
                 this.fetch()
             }
-        }
+        }, 100)
     }
 }
 </script>

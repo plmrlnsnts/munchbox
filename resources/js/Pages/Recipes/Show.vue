@@ -1,17 +1,13 @@
 <template>
     <div class="h-full overflow-y-auto">
         <Portal to="header-left">
-            <InertiaLink :href="$route('home')" class="text-indigo-500">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                </svg>
-            </InertiaLink>
+            <BackButton />
         </Portal>
         <Portal to="header-center">
             <div class="font-bold text-lg ml-2">Recipe</div>
         </Portal>
         <div class="p-4 space-y-6 mb-10">
-            <div class="flex items-center space-x-4">
+            <div class="flex items-start space-x-4">
                 <img class="w-8 h-8 rounded-full shadow-xs object-cover bg-gray-200" :src="recipe.author.avatar" loading="lazy" />
                 <div class="text-sm leading-5 overflow-hidden">
                     <h2 class="block font-semibold">{{ recipe.name }}</h2>
@@ -74,12 +70,17 @@
 
 <script>
 import Layout from '@/Shared/Layout'
+import BackButton from '@/Shared/BackButton'
 
 export default {
     layout: Layout,
 
     props: {
         recipe: Object,
+    },
+
+    components: {
+        BackButton,
     }
 }
 </script>
