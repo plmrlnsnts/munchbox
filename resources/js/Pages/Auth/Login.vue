@@ -59,7 +59,7 @@ export default {
         async submit () {
             this.state = 'loading'
 
-            await this.$inertia.post(this.$route('login'), this.form)
+            await this.$inertia.post(this.$route('login').url(), this.form)
 
             this.state = 'idle'
         }

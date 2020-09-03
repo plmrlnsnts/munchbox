@@ -17,8 +17,6 @@ use Inertia\Inertia;
 
 Auth::routes();
 
-Route::redirect('home', '/');
-
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('explore', fn () => Inertia::render('Explore'))->name('explore');
