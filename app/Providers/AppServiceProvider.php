@@ -29,9 +29,9 @@ class AppServiceProvider extends ServiceProvider
     {
         Model::unguard();
 
-        if (App::environment('production')) {
-            URL::forceScheme('https');
-        }
+        // if (App::environment('production')) {
+        //     URL::forceScheme('https');
+        // }
 
         Inertia::version(fn () => md5_file(public_path('mix-manifest.json')));
 
