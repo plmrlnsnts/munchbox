@@ -14,7 +14,6 @@ import axios from 'axios'
 
 export default {
     props: {
-        // likeable: Object,
         value: Boolean,
         model: String,
         id: Number,
