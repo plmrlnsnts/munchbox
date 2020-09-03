@@ -14,7 +14,7 @@ import axios from 'axios'
 
 export default {
     props: {
-        value: Boolean,
+        value: [Boolean, Number],
         model: String,
         id: Number,
     },
