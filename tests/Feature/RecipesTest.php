@@ -5,7 +5,6 @@ namespace Tests\Feature;
 use App\Recipe;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class RecipesTest extends TestCase
@@ -15,9 +14,7 @@ class RecipesTest extends TestCase
     /** @test */
     public function a_user_can_create_a_recipe()
     {
-        $this->withoutExceptionHandling();
-
-        $this->be(factory(User::class)->create());
+        $this->signIn();
 
         $stub = factory(Recipe::class)->raw();
 

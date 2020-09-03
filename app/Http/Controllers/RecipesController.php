@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Like;
 use App\Recipe;
 use App\Tag;
 use Illuminate\Http\Request;
@@ -18,6 +19,7 @@ class RecipesController extends Controller
     public function index()
     {
         return Recipe::query()
+            ->withIsLiked()
             ->with('author')
             ->latest('updated_at')
             ->paginate(5)
@@ -59,10 +61,13 @@ class RecipesController extends Controller
         return redirect()->route('home');
     }
 
-    public function show(Recipe $recipe)
+    public function show($recipe)
     {
-        $recipe->load(['author', 'ingredients', 'tags']);
-
-        return Inertia::render('Recipes/Show', compact('recipe'));
+        return Inertia::render('Recipes/Show', [
+            'recipe' => Recipe::query()
+                ->withIsLiked()
+                ->with(['author', 'ingredients', 'tags'])
+                ->findOrFail($recipe)
+        ]);
     }
 }

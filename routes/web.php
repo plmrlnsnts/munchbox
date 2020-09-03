@@ -23,9 +23,12 @@ Route::get('explore', fn () => Inertia::render('Explore'))->name('explore');
 Route::get('notifications', fn () => Inertia::render('Notifications'))->name('notifications');
 Route::get('calendar', fn () => Inertia::render('Calendar'))->name('calendar');
 
+Route::post('media', 'MediaController@store')->name('media.store');
+
 Route::get('recipes', 'RecipesController@index')->name('recipes.index');
 Route::get('recipes/create', 'RecipesController@create')->name('recipes.create');
 Route::get('recipes/{recipe}', 'RecipesController@show')->name('recipes.show');
 Route::post('recipes', 'RecipesController@store')->name('recipes.store');
 
-Route::post('media', 'MediaController@store')->name('media.store');
+Route::post('{model}/{id}/likes', 'LikesController@store')->name('likes.store');
+Route::delete('{model}/{id}/likes', 'LikesController@destroy')->name('likes.destroy');
