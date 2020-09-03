@@ -6,7 +6,7 @@
         <Portal to="header-center">
             <div class="font-bold text-lg ml-2">Recipe</div>
         </Portal>
-        <div class="p-4 space-y-6 mb-10">
+        <div class="p-4 space-y-4 mb-10">
             <div class="flex items-start space-x-4">
                 <img class="w-8 h-8 rounded-full shadow-xs object-cover bg-gray-200" :src="recipe.author.avatar" loading="lazy" />
                 <div class="text-sm leading-5 overflow-hidden">
@@ -17,30 +17,28 @@
                     </div>
                 </div>
             </div>
-            <div class="space-y-2">
-                <div class="-mx-4">
-                    <img class="w-full bg-gray-200" :src="recipe.thumbnail" loading="lazy">
+            <div class="-mx-4">
+                <img class="w-full bg-gray-200" :src="recipe.thumbnail" loading="lazy">
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <a href="" class="text-gray-700">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                        </svg>
+                    </a>
+                    <button class="text-gray-700 focus:outline-none">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </button>
                 </div>
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center space-x-2">
-                        <a href="" class="text-gray-700">
-                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-                            </svg>
-                        </a>
-                        <button class="text-gray-700 focus:outline-none">
-                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    <div>
-                        <button type="button" class="text-gray-700 focus:outline-none">
-                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>
-                            </svg>
-                        </button>
-                    </div>
+                <div>
+                    <button type="button" class="text-gray-700 focus:outline-none">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
             <p class="text-sm leading-tight">

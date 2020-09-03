@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Munchbox</title>
-    <meta property="og:image" content="{{ asset('banner.jpg') }}">
+    <meta property="og:image" content="{{ asset('images/banner.jpg') }}">
     <meta property="og:title" content="Oh baby, you're gonna love this!" />
     <meta property="og:description" content="You're in for a ride! We'll build laravel applications using the best tools out there." />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">

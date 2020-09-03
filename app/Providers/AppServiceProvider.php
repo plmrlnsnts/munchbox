@@ -35,6 +35,11 @@ class AppServiceProvider extends ServiceProvider
 
         Inertia::version(fn () => md5_file(public_path('mix-manifest.json')));
 
+        Inertia::share('flash', fn() => ([
+            'success' => session()->get('success'),
+            'error' => session()->get('error'),
+        ]));
+
         Inertia::share('errors', fn () => (
             session()->get('errors')
                 ? session()->get('errors')->getBag('default')->getMessages()

@@ -27,6 +27,23 @@ module.exports = {
         '2/3': '66.6667%',
       },
     },
+    customForms: theme => ({
+      default: {
+        'input, textarea, multiselect, select': {
+          backgroundColor: theme('colors.gray.200'),
+          borderColor: theme('colors.gray.200'),
+          borderRadius: theme('borderRadius.lg'),
+          transitionProperty: theme('transitionProperty.all'),
+          transitionDuration: theme('transitionDuration.150'),
+          transitionTimingFunction: theme('transitionTimingFunction.linear'),
+          '&:focus': {
+            backgroundColor: theme('colors.white'),
+            borderColor: theme('colors.indigo.300'),
+            boxShadow: theme('boxShadow.outline-indigo'),
+          },
+        }
+      }
+    }),
   },
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus', 'focus-within'],

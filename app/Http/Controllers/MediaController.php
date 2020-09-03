@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\Storage;
 
 class MediaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function store(Request $request)
     {
         $request->validate(['file' => 'required|mimes:jpeg,bmp,jpg,png']);

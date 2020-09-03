@@ -17,7 +17,7 @@
                         <div class="space-y-1">
                             <label class="font-medium text-gray-700">Name</label>
                             <FormField name="name">
-                                <input v-model="form.name" type="text" class="px-3 py-2 rounded-lg block w-full bg-gray-200 border border-gray-200 focus:bg-white focus:border-indigo-300 focus:outline-none focus:shadow-outline-indigo transition-shadow duration-100 ease-linear" />
+                                <input v-model="form.name" type="text" class="form-input block w-full" />
                             </FormField>
                         </div>
                         <div class="space-y-1">
@@ -33,7 +33,7 @@
                         <div class="space-y-1">
                             <label class="font-medium text-gray-700">Description</label>
                             <FormField name="description">
-                                <textarea v-model="form.description" placeholder="Tell us something about this recipe" class="px-3 py-2 rounded-lg block w-full bg-gray-200 border border-gray-200 focus:bg-white focus:border-indigo-300 focus:outline-none focus:shadow-outline-indigo transition-shadow duration-100 ease-linear" rows="4"></textarea>
+                                <textarea v-model="form.description" placeholder="Tell us something about this recipe" class="form-textarea block w-full" rows="4"></textarea>
                             </FormField>
                         </div>
                         <hr class="-mx-4">
@@ -42,7 +42,7 @@
                         <div class="space-y-1">
                             <label class="font-medium text-gray-700">Preparations</label>
                             <FormField name="instructions">
-                                <textarea v-model="form.instructions" placeholder="Steps for making this awesome recipe" class="px-3 py-2 rounded-lg block w-full bg-gray-200 border border-gray-200 focus:bg-white focus:border-indigo-300 focus:outline-none focus:shadow-outline-indigo transition-shadow duration-100 ease-linear" rows="8"></textarea>
+                                <textarea v-model="form.instructions" placeholder="Steps for making this awesome recipe" class="form-textarea block w-full" rows="8"></textarea>
                             </FormField>
                         </div>
                     </div>

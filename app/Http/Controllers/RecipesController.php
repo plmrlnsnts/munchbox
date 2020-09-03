@@ -6,15 +6,12 @@ use App\Recipe;
 use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class RecipesController extends Controller
 {
     public function __construct()
     {
-        Auth::loginUsingId(1);
-
         $this->middleware('auth');
     }
 

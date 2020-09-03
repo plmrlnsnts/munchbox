@@ -16,28 +16,29 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        User::create([
+            'name' => 'Paul Santos',
+            'email' => 'paulmarlonsantos@gmail.com',
+            'password' => bcrypt('password'),
+        ]);
+
         $recipes = json_decode(File::get(database_path('recipes.json')), true);
 
-        User::insert(
-            collect($recipes)
-                ->map(fn ($recipe) => $recipe['author'])
-                ->unique(fn ($user) => $user['id'])
-                ->map(fn ($user) => [
-                    'name' => $user['name'],
-                    'email' => $user['email'],
-                    'password' => bcrypt('password'),
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ])
-                ->sortBy('id')
-                ->all()
-        );
+        $users = collect($recipes)
+            ->map(fn ($recipe) => $recipe['author'])
+            ->unique(fn ($user) => $user['email'])
+            ->map(fn ($user) => User::create([
+                'name' => $user['name'],
+                'email' => $user['email'],
+                'password' => bcrypt('password'),
+            ]));
 
-        collect($recipes)->each(function ($data) {
-            $recipe = Recipe::create(Arr::except($data, ['id', 'author', 'ingredients']));
-            collect($data['ingredients'])->each(fn ($ingr) => (
-                $recipe->ingredients()->create(Arr::except($ingr, ['id'])
-            )));
+        collect($recipes)->each(function ($data) use ($users) {
+            $recipe = new Recipe(Arr::except($data, ['author', 'ingredients']));
+            $recipe->user_id = $users->firstWhere('email', $data['author']['email'])->id;
+            $recipe->save();
+
+            $recipe->ingredients()->createMany($data['ingredients']);
         });
     }
 }

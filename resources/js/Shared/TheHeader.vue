@@ -9,9 +9,11 @@
         </div>
         <div class="flex-1 px-4">
             <PortalTarget name="header-center">
-                <InertiaLink :href="$route('home')">
-                    <img class="h-5 w-full" src="/logo.svg" alt="Munchbox">
-                </InertiaLink>
+                <div class="flex justify-center">
+                    <InertiaLink :href="$route('home')">
+                        <img class="h-5 w-auto" src="/images/logo.svg" alt="Munchbox">
+                    </InertiaLink>
+                </div>
             </PortalTarget>
         </div>
         <div class="flex-shrink-0">
