@@ -14,26 +14,29 @@ import axios from 'axios'
 
 export default {
     props: {
-        likeable: Object,
+        // likeable: Object,
+        value: Boolean,
         model: String,
+        id: Number,
     },
 
     data: vm => ({
-        isLiked: !! vm.likeable.is_liked
+        isLiked: !! vm.value
     }),
 
     methods: {
         submit () {
             this.isLiked ? this.unlike() : this.like()
             this.isLiked = ! this.isLiked
+            this.$emit('input', this.isLiked)
         },
 
         like () {
-            axios.post(this.$route('likes.store', [this.model, this.likeable.id]).url())
+            axios.post(this.$route('likes.store', [this.model, this.id]).url())
         },
 
         unlike () {
-            axios.delete(this.$route('likes.destroy', [this.model, this.likeable.id]).url())
+            axios.delete(this.$route('likes.destroy', [this.model, this.id]).url())
         }
     }
 }
