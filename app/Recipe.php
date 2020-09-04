@@ -46,8 +46,7 @@ class Recipe extends Model
             ->selectRaw('count(*)')
             ->whereColumn('model_id', 'recipes.id')
             ->where('user_id', auth()->id())
-            ->where('model_type', $this->getTable())
             ->limit(1)
-        ]);
+        ])->withCasts(['is_liked' => 'boolean']);
     }
 }

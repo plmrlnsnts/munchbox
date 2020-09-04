@@ -22,9 +22,9 @@
     },
     "dependencies": {
         "@inertiajs/inertia": "^0.2.1",
-        "@inertiajs/inertia-vue": "^0.2.0",
+        "@inertiajs/inertia-vue": "^0.2.1",
         "portal-vue": "^2.1.7",
-        "tailwindcss": "^1.7.5",
+        "tailwindcss": "^1.7.6",
         "vue": "^2.6.12"
     }
 }

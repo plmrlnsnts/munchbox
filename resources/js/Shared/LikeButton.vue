@@ -27,7 +27,7 @@ export default {
         submit () {
             this.isLiked ? this.unlike() : this.like()
             this.isLiked = ! this.isLiked
-            this.$emit('input', this.isLiked)
+            this.$emit('liked', this.isLiked)
         },
 
         like () {

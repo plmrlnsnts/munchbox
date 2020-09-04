@@ -40,7 +40,12 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
                                 </svg>
                             </a>
-                            <LikeButton v-model="recipe.is_liked" :id="recipe.id" model="recipes" />
+                            <LikeButton
+                                @liked="update(recipe.id, { is_liked: $event })"
+                                :id="recipe.id"
+                                :value="recipe.is_liked"
+                                model="recipes"
+                            />
                         </div>
                         <div>
                             <button type="button" class="text-gray-700 focus:outline-none">
@@ -83,14 +88,13 @@ import axios from 'axios'
 import { debounce } from 'lodash'
 import Layout from '@/Shared/Layout'
 import LikeButton from '@/Shared/LikeButton'
+import { getters, mutations, actions } from '@/Shared/Timeline'
 
 export default {
     layout: Layout,
 
     data: vm => ({
-        state: 'idle',
-        recipes: [],
-        nextPageUrl: vm.$route('recipes.index').url(),
+        scrollTop: 0,
     }),
 
     components: {
@@ -99,46 +103,32 @@ export default {
 
     mounted () {
         this.$nextTick(() => {
-            if (! this.recipes.length) {
-                this.fetch()
+            if (this.recipes.length) {
+                this.$el.scrollTop = this.scrollTop
             } else {
-                this.$el.scrollTop = localStorage.getItem('Home.ScrollPosition')
+                this.fetch()
             }
         })
     },
 
     computed: {
-        isLoading () {
-            return this.state === 'loading'
-        }
+        ...getters,
     },
 
     remember: [
-        'recipes',
-        'nextPageUrl',
+        'scrollTop',
     ],
 
     methods: {
-        fetch () {
-            if (this.state === 'loading') return
-
-            if (! this.nextPageUrl) return
-
-            this.state = 'loading'
-
-            axios.get(this.nextPageUrl).then(response => {
-                this.state = 'idle'
-                this.nextPageUrl = response.data.next_page_url
-                this.recipes = this.recipes.concat(response.data.data)
-            })
-        },
+        ...actions,
+        ...mutations,
 
         scrolled: debounce(function (event) {
             const element = event.target
             const scrollPosition = element.offsetHeight + element.scrollTop
             const scrollHorizon = element.scrollHeight - element.scrollHeight / 4
 
-            localStorage.setItem('Home.ScrollPosition', element.scrollTop)
+            this.scrollTop = element.scrollTop
 
             if (scrollPosition >= scrollHorizon) {
                 this.fetch()

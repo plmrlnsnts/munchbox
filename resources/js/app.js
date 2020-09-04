@@ -2,8 +2,8 @@ import { InertiaApp } from '@inertiajs/inertia-vue'
 import PortalVue from 'portal-vue'
 import Vue from 'vue'
 
-Vue.use(InertiaApp)
 Vue.use(PortalVue)
+Vue.use(InertiaApp)
 
 Vue.mixin({ methods: { $route: window.route } })
 
